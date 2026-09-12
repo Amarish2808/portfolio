@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<meta name="description" content="Amarish A Vinodh — B.Sc. IT Developer from Thrissur, Kerala. Open to internships and entry-level roles.">
-<title>Amarish A Vinodh — Developer</title>
+<meta name="description" content="Amarish A Vinodh — B.Sc. IT graduate pursuing a career in Cybersecurity (CEH, CICSA), based in Thrissur, Kerala. Open to internships and entry-level roles.">
+<title>Amarish A Vinodh — Cybersecurity</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -290,6 +290,15 @@ body.light-mode .projects-wrap{background:#e8e8ed}
 .ctags{display:flex;flex-wrap:wrap;gap:0.3rem}
 .ctag{font-size:0.58rem;padding:0.16rem 0.5rem;border-radius:100px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.42);border:1px solid rgba(255,255,255,0.1)}
 @media(max-width:600px){.bento{grid-template-columns:1fr}.card.s2{grid-column:auto}}
+.proj-empty{background:transparent;box-shadow:none;border:1.5px dashed rgba(0,0,0,0.16);cursor:default}
+@media(hover:hover){.proj-empty:hover{transform:none;box-shadow:none;border-color:rgba(41,151,255,0.35)}}
+.proj-empty-visual{min-height:clamp(220px,26vw,300px);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.02)}
+.proj-empty-inner{max-width:520px;margin:0 auto;text-align:center;padding:clamp(1.5rem,3vw,2rem)}
+.proj-empty-icon{font-size:clamp(2.2rem,4vw,2.8rem);display:block;margin-bottom:1rem;opacity:0.55}
+.proj-empty-title{font-size:clamp(1.1rem,2.2vw,1.4rem);font-weight:700;letter-spacing:-0.02em;color:#1d1d1f;margin-bottom:0.6rem}
+.proj-empty-desc{font-size:clamp(0.78rem,1.3vw,0.88rem);line-height:1.65;color:#6e6e73}
+body.light-mode .proj-empty{border-color:rgba(0,0,0,0.16)}
+body.light-mode .proj-empty-visual{background:rgba(0,0,0,0.02)}
 
 /* ─── ABOUT ─── */
 .about-wrap{background:#1d1d1f;padding:clamp(5rem,10vw,8rem) clamp(1.2rem,4vw,2rem);display:flex;align-items:center;justify-content:center;transition:background 0.5s}
@@ -451,11 +460,11 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
     <div class="h3d-card"></div>
     <div class="h3d-card"></div>
   </div>
-  <p class="hero-kicker">B.Sc. Information Technology · Thrissur, Kerala · Graduating 2026</p>
+  <p class="hero-kicker">B.Sc. Information Technology Graduate · Pursuing CEH &amp; CICSA · Thrissur, Kerala</p>
   <h1 class="hero-h1">Amarish<br><span class="gr">A Vinodh</span></h1>
-  <p class="hero-role">Developer. Problem-Solver. Builder of intelligent systems.</p>
+  <p class="hero-role">Cybersecurity Enthusiast. Ethical Hacker in training. Defender of systems.</p>
   <div class="hero-actions">
-    <a href="" class="ha">View Work <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="#projects" class="ha">View Work <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="tel:+919498010421" class="ha">Get in Touch <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="hero-scroll-hint"><div class="hs-bar"></div><span class="hs-lbl">Scroll</span></div>
@@ -465,9 +474,9 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 <div class="stats-bar">
   <div class="stats-grid">
     <div class="stat-cell ru"><span class="stat-n" data-to="5">0</span><div class="stat-l">Languages</div></div>
-    <div class="stat-cell ru"><span class="stat-n" data-to="3">0</span><div class="stat-l">Projects Built</div></div>
-    <div class="stat-cell ru"><span class="stat-n" data-to="2">0</span><div class="stat-l">Certifications</div></div>
-    <div class="stat-cell ru"><span class="stat-n" data-to="2026" data-year="1">0</span><div class="stat-l">Graduating</div></div>
+    <div class="stat-cell ru"><span class="stat-n">Soon</span><div class="stat-l">Projects</div></div>
+    <div class="stat-cell ru"><span class="stat-n" data-to="3">0</span><div class="stat-l">Certifications</div></div>
+    <div class="stat-cell ru"><span class="stat-n" data-to="2026" data-year="1">0</span><div class="stat-l">Graduated</div></div>
   </div>
 </div>
 
@@ -475,14 +484,14 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 <div class="sticky-wrap">
   <div class="sticky-pin">
     <p class="sticky-copy" id="phrase">
-  <span class="w">Code</span>
-  <span class="w">meets</span>
-  <span class="w">human</span>
-  <span class="w">need</span>
-  <span class="w">—</span>
-  <span class="w">precise,</span>
-  <span class="w">elegant,</span>
-  <span class="w">thoughtful.</span>
+  <span class="w">Think</span>
+  <span class="w">like</span>
+  <span class="w">an</span>
+  <span class="w">attacker.</span>
+  <span class="w">Defend</span>
+  <span class="w">like</span>
+  <span class="w">it</span>
+  <span class="w">matters.</span>
 </p>
   </div>
 </div>
@@ -508,30 +517,29 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
               <div class="photo-overlay"></div>
               <div class="photo-chip">
                 <div class="chip-dot"></div>
-                <div><div class="chip-name">Amarish A Vinodh</div><div class="chip-role">IT Developer · Available 2026</div></div>
+                <div><div class="chip-name">Amarish A Vinodh</div><div class="chip-role">Cybersecurity · CEH &amp; CICSA Candidate · Open to Work</div></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="photo-right">
-        <span class="photo-eyebrow ru">The Person Behind the Code</span>
+        <span class="photo-eyebrow ru">The Person Behind the Defense</span>
         <h2 class="photo-headline ru">Hello,<br>I'm <em>Amarish.</em></h2>
-        <p class="photo-body ru">A <strong>IT graduate</strong> from Thrissur, Kerala — passionate about crafting software that's both technically rigorous and deeply human-centered.<br><br>When I'm not writing code, I'm exploring how <strong>AI and mobile technology</strong> can quietly improve everyday lives, one well-built product at a time.</p>
+        <p class="photo-body ru">An <strong>IT graduate</strong> from Thrissur, Kerala — pursuing a career in <strong>cybersecurity</strong>, currently working through the <strong>Certified Ethical Hacker (CEH)</strong> and <strong>CICSA</strong> courses.<br><br>I'm focused on how offensive-security thinking — vulnerability assessment, penetration testing, and threat analysis — can be used to build systems that are genuinely hard to break.</p>
         <div class="photo-chips ru">
-          <span class="pchip"><span class="pchip-dot blue"></span>Python · Java · C++ · Dart</span>
+          <span class="pchip"><span class="pchip-dot blue"></span>Network Security · Python · Linux</span>
           <span class="pchip"><span class="pchip-dot green"></span>Open to Work</span>
-          <span class="pchip"><span class="pchip-dot amber"></span>Graduaed in 2026</span>
+          <span class="pchip"><span class="pchip-dot amber"></span>Graduated 2026</span>
           <span class="pchip"><span class="pchip-dot blue"></span>Thrissur, Kerala</span>
-          <span class="pchip"><span class="pchip-dot green"></span>Full-Stack &amp; AI</span>
+          <span class="pchip"><span class="pchip-dot green"></span>Ethical Hacking &amp; SOC</span>
         </div>
       </div>
     </div>
   </div>
   <div class="photo-feature-strip">
     <div class="strip-inner">
-      <!-- <div class="strip-item ru"><div class="strip-icon">🧠</div><div class="strip-title">AI-Driven Thinking</div><div class="strip-desc">Integrates ML concepts into practical mobile and web applications.</div></div> -->
-      <div class="strip-item ru"><div class="strip-icon">📱</div><div class="strip-title">Cross-Platform Builder</div><div class="strip-desc">Flutter &amp; Android Studio — apps that work beautifully on every device.</div></div>
+      <div class="strip-item ru"><div class="strip-icon">🛡️</div><div class="strip-title">Security-First Thinking</div><div class="strip-desc">Applies vulnerability assessment and threat modeling to real-world systems.</div></div>
       <div class="strip-item ru"><div class="strip-icon">🤝</div><div class="strip-title">Team-First Mindset</div><div class="strip-desc">Clear communicator who adapts fast and contributes from day one.</div></div>
     </div>
   </div>
@@ -554,59 +562,59 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
         <span>Morning</span><span>Afternoon</span><span>Evening</span>
       </div>
       <div class="avail-row"><span class="avail-day-name">Mon</span><div class="avail-slots">
-        <div class="avail-slot" data-level="1" title="Mon 6–9 AM · Unavailable"></div>
-        <div class="avail-slot" data-level="3" title="Mon 9 AM–12 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Mon 12–3 PM · High"></div>
-        <div class="avail-slot" data-level="2" title="Mon 3–6 PM · High"></div>
-        <div class="avail-slot" data-level="1" title="Mon 6–9 PM · Low"></div>
+        <div class="avail-slot" data-level="1" title="Mon 6–9 AM · Low availability"></div>
+        <div class="avail-slot" data-level="3" title="Mon 9 AM–12 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="3" title="Mon 12–3 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="2" title="Mon 3–6 PM · Available"></div>
+        <div class="avail-slot" data-level="1" title="Mon 6–9 PM · Low availability"></div>
         <div class="avail-slot" data-level="0" title="Mon 9 PM+ · Unavailable"></div>
       </div></div>
       <div class="avail-row"><span class="avail-day-name">Tue</span><div class="avail-slots">
-        <div class="avail-slot" data-level="1" title="Tue 6–9 AM · Unavailable"></div>
-        <div class="avail-slot" data-level="3" title="Tue 9 AM–12 PM · High"></div>
-        <div class="avail-slot" data-level="2" title="Tue 12–3 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Tue 3–6 PM · High"></div>
-        <div class="avail-slot" data-level="2" title="Tue 6–9 PM · Low"></div>
+        <div class="avail-slot" data-level="1" title="Tue 6–9 AM · Low availability"></div>
+        <div class="avail-slot" data-level="3" title="Tue 9 AM–12 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="3" title="Tue 12–3 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="2" title="Tue 3–6 PM · Available"></div>
+        <div class="avail-slot" data-level="1" title="Tue 6–9 PM · Low availability"></div>
         <div class="avail-slot" data-level="0" title="Tue 9 PM+ · Unavailable"></div>
       </div></div>
       <div class="avail-row"><span class="avail-day-name">Wed</span><div class="avail-slots">
-        <div class="avail-slot" data-level="0" title="Wed 6–9 AM · Unavailable"></div>
-        <div class="avail-slot" data-level="2" title="Wed 9 AM–12 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Wed 12–3 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Wed 3–6 PM · High"></div>
-        <div class="avail-slot" data-level="2" title="Wed 6–9 PM · Low"></div>
+        <div class="avail-slot" data-level="1" title="Wed 6–9 AM · Low availability"></div>
+        <div class="avail-slot" data-level="3" title="Wed 9 AM–12 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="3" title="Wed 12–3 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="2" title="Wed 3–6 PM · Available"></div>
+        <div class="avail-slot" data-level="1" title="Wed 6–9 PM · Low availability"></div>
         <div class="avail-slot" data-level="0" title="Wed 9 PM+ · Unavailable"></div>
       </div></div>
       <div class="avail-row"><span class="avail-day-name">Thu</span><div class="avail-slots">
-        <div class="avail-slot" data-level="1" title="Thu 6–9 AM · Unavailable"></div>
-        <div class="avail-slot" data-level="3" title="Thu 9 AM–12 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Thu 12–3 PM · High"></div>
-        <div class="avail-slot" data-level="2" title="Thu 3–6 PM · High"></div>
-        <div class="avail-slot" data-level="1" title="Thu 6–9 PM · Low"></div>
+        <div class="avail-slot" data-level="1" title="Thu 6–9 AM · Low availability"></div>
+        <div class="avail-slot" data-level="3" title="Thu 9 AM–12 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="3" title="Thu 12–3 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="2" title="Thu 3–6 PM · Available"></div>
+        <div class="avail-slot" data-level="1" title="Thu 6–9 PM · Low availability"></div>
         <div class="avail-slot" data-level="0" title="Thu 9 PM+ · Unavailable"></div>
       </div></div>
       <div class="avail-row"><span class="avail-day-name">Fri</span><div class="avail-slots">
-        <div class="avail-slot" data-level="1" title="Fri 6–9 AM · Unavailable"></div>
-        <div class="avail-slot" data-level="2" title="Fri 9 AM–12 PM · High"></div>
-        <div class="avail-slot" data-level="2" title="Fri 12–3 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Fri 3–6 PM · High"></div>
-        <div class="avail-slot" data-level="2" title="Fri 6–9 PM · Low"></div>
+        <div class="avail-slot" data-level="1" title="Fri 6–9 AM · Low availability"></div>
+        <div class="avail-slot" data-level="3" title="Fri 9 AM–12 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="3" title="Fri 12–3 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="2" title="Fri 3–6 PM · Available"></div>
+        <div class="avail-slot" data-level="1" title="Fri 6–9 PM · Low availability"></div>
         <div class="avail-slot" data-level="0" title="Fri 9 PM+ · Unavailable"></div>
       </div></div>
       <div class="avail-row"><span class="avail-day-name">Sat</span><div class="avail-slots">
         <div class="avail-slot" data-level="0" title="Sat 6–9 AM · Unavailable"></div>
-        <div class="avail-slot" data-level="1" title="Sat 9 AM–12 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Sat 12–3 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Sat 3–6 PM · High"></div>
-        <div class="avail-slot" data-level="3" title="Sat 6–9 PM · Low"></div>
-        <div class="avail-slot" data-level="1" title="Sat 9 PM+ · Unavailable"></div>
+        <div class="avail-slot" data-level="2" title="Sat 9 AM–12 PM · Available"></div>
+        <div class="avail-slot" data-level="3" title="Sat 12–3 PM · Best time to reach me"></div>
+        <div class="avail-slot" data-level="2" title="Sat 3–6 PM · Available"></div>
+        <div class="avail-slot" data-level="1" title="Sat 6–9 PM · Low availability"></div>
+        <div class="avail-slot" data-level="0" title="Sat 9 PM+ · Unavailable"></div>
       </div></div>
       <div class="avail-row"><span class="avail-day-name">Sun</span><div class="avail-slots">
         <div class="avail-slot" data-level="0" title="Sun 6–9 AM · Unavailable"></div>
         <div class="avail-slot" data-level="0" title="Sun 9 AM–12 PM · Unavailable"></div>
-        <div class="avail-slot" data-level="2" title="Sun 12–3 PM · Unavailable"></div>
-        <div class="avail-slot" data-level="3" title="Sun 3–6 PM · Unavailable"></div>
-        <div class="avail-slot" data-level="2" title="Sun 6–9 PM · Unavailable"></div>
+        <div class="avail-slot" data-level="1" title="Sun 12–3 PM · Low availability"></div>
+        <div class="avail-slot" data-level="2" title="Sun 3–6 PM · Available"></div>
+        <div class="avail-slot" data-level="1" title="Sun 6–9 PM · Low availability"></div>
         <div class="avail-slot" data-level="0" title="Sun 9 PM+ · Unavailable"></div>
       </div></div>
       <div class="avail-grid-label" style="margin-top:0.6rem;justify-content:flex-end;gap:1rem">
@@ -622,19 +630,19 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 <section id="skills" class="skills-wrap">
   <div class="skills-top">
     <span class="eyebrow ru">Skills & Stack</span>
-    <h2 class="big-title ru">The right tools.<br><em>For the right results.</em></h2>
-    <p class="big-body ru">From Android apps to backend APIs — built on a solid foundation of languages and frameworks.</p>
+    <h2 class="big-title ru">The right tools.<br><em>For the right defenses.</em></h2>
+    <p class="big-body ru">From network penetration testing to secure application development — built on a solid foundation of security tools and fundamentals.</p>
   </div>
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <div class="tag-pill"><div class="td"></div>Python</div><div class="tag-pill"><div class="td"></div>Java</div><div class="tag-pill"><div class="td"></div>C++</div><div class="tag-pill"><div class="td"></div>Dart &amp; Flutter</div><div class="tag-pill"><div class="td"></div>MongoDB &amp; Express</div><div class="tag-pill"><div class="td"></div>React &amp; Node.js</div><div class="tag-pill"><div class="td"></div>MySQL</div><div class="tag-pill"><div class="td"></div>Android Studio</div><div class="tag-pill"><div class="td"></div>Firebase</div><div class="tag-pill"><div class="td"></div>REST APIs</div>
-      <div class="tag-pill"><div class="td"></div>Python</div><div class="tag-pill"><div class="td"></div>Java</div><div class="tag-pill"><div class="td"></div>C++</div><div class="tag-pill"><div class="td"></div>Dart &amp; Flutter</div><div class="tag-pill"><div class="td"></div>MongoDB &amp; Express</div><div class="tag-pill"><div class="td"></div>React &amp; Node.js</div><div class="tag-pill"><div class="td"></div>MySQL</div><div class="tag-pill"><div class="td"></div>Android Studio</div><div class="tag-pill"><div class="td"></div>Firebase</div><div class="tag-pill"><div class="td"></div>REST APIs</div>
+      <div class="tag-pill"><div class="td"></div>Python</div><div class="tag-pill"><div class="td"></div>Linux</div><div class="tag-pill"><div class="td"></div>Kali Linux</div><div class="tag-pill"><div class="td"></div>Nmap</div><div class="tag-pill"><div class="td"></div>Wireshark</div><div class="tag-pill"><div class="td"></div>Metasploit</div><div class="tag-pill"><div class="td"></div>Burp Suite</div><div class="tag-pill"><div class="td"></div>Network Security</div><div class="tag-pill"><div class="td"></div>OWASP Top 10</div><div class="tag-pill"><div class="td"></div>REST APIs</div>
+      <div class="tag-pill"><div class="td"></div>Python</div><div class="tag-pill"><div class="td"></div>Linux</div><div class="tag-pill"><div class="td"></div>Kali Linux</div><div class="tag-pill"><div class="td"></div>Nmap</div><div class="tag-pill"><div class="td"></div>Wireshark</div><div class="tag-pill"><div class="td"></div>Metasploit</div><div class="tag-pill"><div class="td"></div>Burp Suite</div><div class="tag-pill"><div class="td"></div>Network Security</div><div class="tag-pill"><div class="td"></div>OWASP Top 10</div><div class="tag-pill"><div class="td"></div>REST APIs</div>
     </div>
   </div>
   <div class="marquee-wrap">
     <div class="marquee-track rev">
-      <div class="tag-pill"><div class="td g"></div>Git &amp; GitHub</div><div class="tag-pill"><div class="td g"></div>HTML / CSS / JS</div><div class="tag-pill"><div class="td g"></div>Machine Learning</div><div class="tag-pill"><div class="td g"></div>Figma</div><div class="tag-pill"><div class="td g"></div>Linux</div><div class="tag-pill"><div class="td g"></div>MERN Stack</div><div class="tag-pill"><div class="td g"></div>OOP Design</div><div class="tag-pill"><div class="td g"></div>Problem-Solving</div>
-      <div class="tag-pill"><div class="td g"></div>Git &amp; GitHub</div><div class="tag-pill"><div class="td g"></div>HTML / CSS / JS</div><div class="tag-pill"><div class="td g"></div>Machine Learning</div><div class="tag-pill"><div class="td g"></div>Figma</div><div class="tag-pill"><div class="td g"></div>Linux</div><div class="tag-pill"><div class="td g"></div>MERN Stack</div><div class="tag-pill"><div class="td g"></div>OOP Design</div><div class="tag-pill"><div class="td g"></div>Problem-Solving</div>
+      <div class="tag-pill"><div class="td g"></div>Ethical Hacking (CEH)</div><div class="tag-pill"><div class="td g"></div>Penetration Testing</div><div class="tag-pill"><div class="td g"></div>Vulnerability Assessment</div><div class="tag-pill"><div class="td g"></div>Git &amp; GitHub</div><div class="tag-pill"><div class="td g"></div>C++ / Java</div><div class="tag-pill"><div class="td g"></div>SIEM Basics</div><div class="tag-pill"><div class="td g"></div>Cryptography</div><div class="tag-pill"><div class="td g"></div>Problem-Solving</div>
+      <div class="tag-pill"><div class="td g"></div>Ethical Hacking (CEH)</div><div class="tag-pill"><div class="td g"></div>Penetration Testing</div><div class="tag-pill"><div class="td g"></div>Vulnerability Assessment</div><div class="tag-pill"><div class="td g"></div>Git &amp; GitHub</div><div class="tag-pill"><div class="td g"></div>C++ / Java</div><div class="tag-pill"><div class="td g"></div>SIEM Basics</div><div class="tag-pill"><div class="td g"></div>Cryptography</div><div class="tag-pill"><div class="td g"></div>Problem-Solving</div>
     </div>
   </div>
 </section>
@@ -646,30 +654,14 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
     <h2 class="big-title ru">Work that speaks for itself.</h2>
   </div>
   <div class="bento">
-    <div class="card s2 bg1 ru">
-      <div class="card-visual"><div class="cglow gb"></div><div class="cemoji">🏋️</div>
-        <div class="cinfo"><span class="cbadge bb">Featured · 2024</span><div class="cname">Arogyam 360 — Intelligent Health Ecosystem</div><div class="cdesc">Hybrid web + Android platform integrating gym management, AI-powered diet guidance, and real-time health monitoring with role-based dashboards.</div><div class="ctags"><span class="ctag">Python</span><span class="ctag">Dart/Flutter</span><span class="ctag">MySQL</span><span class="ctag">AI/ML</span><span class="ctag">Android</span></div></div>
+    <div class="card s2 proj-empty ru">
+      <div class="card-visual proj-empty-visual">
+        <div class="proj-empty-inner">
+          <span class="proj-empty-icon">🛡️</span>
+          <div class="proj-empty-title">Projects coming soon</div>
+          <div class="proj-empty-desc">I'm currently building out hands-on cybersecurity projects — network scans, vulnerability labs, and CEH/CICSA coursework applied to real systems. Check back shortly.</div>
+        </div>
       </div>
-    </div>
-    <div class="card bg2 ru">
-      <div class="card-visual"><div class="cglow gp"></div><div class="cemoji">🎓</div>
-        <div class="cinfo"><span class="cbadge bp">MERN Stack · 2024</span><div class="cname">Placement Tracker — Career Analytics</div><div class="cdesc">Full-stack application for students to track job applications, interview stages, and placement progress with real-time analytics.</div><div class="ctags"><span class="ctag">React</span><span class="ctag">Node.js</span><span class="ctag">MongoDB</span><span class="ctag">Express</span></div></div>
-      </div>
-    </div>
-    <!-- <div class="card bg2 ru">
-      <div class="card-visual"><div class="cglow gp"></div><div class="cemoji">📊</div>
-        <div class="cinfo"><span class="cbadge bp">CLI Tool</span><div class="cname">TaskFlow — Developer CLI</div><div class="cdesc">Command-line task manager with JSON persistence, priority queues, and deadline tracking.</div><div class="ctags"><span class="ctag">Python</span><span class="ctag">CLI</span><span class="ctag">JSON</span></div></div>
-      </div>
-    </div> -->
-    <!-- <div class="card bg3 ru">
-      <div class="card-visual"><div class="cglow ga"></div><div class="cemoji">🔍</div>
-        <div class="cinfo"><span class="cbadge ba">Bug Tracker</span><div class="cname">CodeSentinel — Issue Tracker</div><div class="cdesc">Java-backed issue tracker with severity tagging, team assignment, and status workflows.</div><div class="ctags"><span class="ctag">Java</span><span class="ctag">MySQL</span><span class="ctag">OOP</span></div></div>
-      </div>
-    </div> -->
-    <!-- <div class="card s2 bg4 ru">
-      <div class="card-visual"><div class="cglow gg"></div><div class="cemoji">🌉</div>
-        <div class="cinfo"><span class="cbadge bgn">Analytics</span><div class="cname">DataBridge — CSV Analytics API</div><div class="cdesc">RESTful Python API that ingests CSV datasets, computes statistical summaries, and returns structured JSON for frontend dashboards.</div><div class="ctags"><span class="ctag">Python</span><span class="ctag">REST API</span><span class="ctag">Data Analysis</span></div></div>
-      </div> -->
     </div>
   </div>
 </section>
@@ -677,11 +669,11 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 <!-- ABOUT -->
 <section id="about" class="about-wrap">
   <div class="about-grid">
-    <div class="about-hl ru">Driven by<br><em>curiosity.</em><br>Powered by<br>clean code.</div>
+    <div class="about-hl ru">Driven by<br><em>curiosity.</em><br>Powered by<br>vigilance.</div>
     <div class="about-copy ru">
-      <p>I'm a final-year <strong>B.Sc. Information Technology</strong> student with a deep focus on building software that solves real problems — from cross-platform mobile apps to <strong>full-stack MERN</strong> systems.</p>
-      <p>Strong fundamentals in <strong>Python, Java, C++, and JavaScript</strong> with hands-on Android, Database, and React experience. I adapt fast, communicate clearly, and thrive in teams.</p>
-      <p>Currently looking for <strong>internships and entry-level roles</strong> where I can contribute from day one.</p>
+      <p>I'm a <strong>B.Sc. Information Technology</strong> graduate pivoting into <strong>cybersecurity</strong> — currently pursuing the <strong>Certified Ethical Hacker (CEH)</strong> and <strong>CICSA</strong> courses to build a rigorous, hands-on foundation in offensive and defensive security.</p>
+      <p>Strong fundamentals in <strong>Python, Java, C++, and Linux</strong>, with hands-on practice in network scanning, vulnerability assessment, and web application security testing. I adapt fast, communicate clearly, and thrive in teams.</p>
+      <p>Currently looking for <strong>internships and entry-level roles</strong> in cybersecurity, SOC analysis, or penetration testing where I can contribute from day one.</p>
       <div class="info-grid">
         <div class="info-box"><strong>Email</strong><span>amarishavinodh2002@gmail.com</span></div>
         <div class="info-box"><strong>Phone</strong><span>+91 9498010421</span></div>
@@ -699,10 +691,9 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
     <h2 class="big-title ru">Always learning. Always growing.</h2>
   </div>
   <div class="cert-grid">
+    <div class="cert-box ru"><span class="cert-icon">🎯</span><div class="cert-org">EC-Council</div><div class="cert-name">Certified Ethical Hacker (CEH)</div><span class="cert-pill pw">In Progress</span></div>
+    <div class="cert-box ru"><span class="cert-icon">🕶️</span><div class="cert-org">Red Team Hacker Academy</div><div class="cert-name">CICSA</div><span class="cert-pill pw">In Progress</span></div>
     <div class="cert-box ru"><span class="cert-icon">🧑‍💻</span><div class="cert-org">IBM / Coursera</div><div class="cert-name">Introduction to Software Engineering</div><span class="cert-pill pd">Completed 2024</span></div>
-    <!-- <div class="cert-box ru"><span class="cert-icon">🐍</span><div class="cert-org">Google / Coursera</div><div class="cert-name">Python for Everybody Specialization</div><span class="cert-pill pd">Completed 2024</span></div>
-    <div class="cert-box ru"><span class="cert-icon">🗄️</span><div class="cert-org">Meta / Coursera</div><div class="cert-name">Database Engineering Fundamentals</div><span class="cert-pill pw">In Progress</span></div>
-    <div class="cert-box ru"><span class="cert-icon">📱</span><div class="cert-org">Google</div><div class="cert-name">Associate Android Developer Path</div><span class="cert-pill pw">In Progress</span></div> -->
   </div>
 </section>
 
@@ -711,7 +702,9 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
   <span class="eyebrow ru">Education</span>
   <h2 class="big-title ru">The foundation of everything.</h2>
   <div class="edu-list">
-    <div class="edu-row"><div class="edu-yr">2023 – 2026</div><div><div class="edu-deg">B.Sc. Information Technology</div><div class="edu-school">Center for Computer Science & Information Technology</div></div></div>
+    <div class="edu-row"><div class="edu-yr">2026 – Present</div><div><div class="edu-deg">Certified Ethical Hacker (CEH) — In Progress</div><div class="edu-school">EC-Council</div></div></div>
+    <div class="edu-row"><div class="edu-yr">2026 – Present</div><div><div class="edu-deg">CICSA — In Progress</div><div class="edu-school">Red Team Hacker Academy</div></div></div>
+    <div class="edu-row"><div class="edu-yr">2023 – 2026</div><div><div class="edu-deg">B.Sc. Information Technology — Graduated</div><div class="edu-school">Center for Computer Science & Information Technology</div></div></div>
     <div class="edu-row"><div class="edu-yr">2018 – 2020</div><div><div class="edu-deg">Higher Secondary — Bio-Mathematics</div><div class="edu-school">Nazareth Matric Higher Secondary School</div></div></div>
   </div>
 </section>
@@ -720,7 +713,7 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 <section id="contact" class="contact-wrap">
   <span class="eyebrow ru" style="display:block;margin-bottom:0.9rem">Let's Connect</span>
   <h2 class="contact-hl ru">Say hello.</h2>
-  <p class="contact-sub ru">Open to internships, entry-level roles, and interesting collaborations. Let's build something great together.</p>
+  <p class="contact-sub ru">Open to internships, entry-level roles, and interesting collaborations in cybersecurity. Let's build something secure together.</p>
   <div class="cta-row ru">
     <a href="mailto:amarishavinodh2002@gmail.com" class="btn-blue">Send a Message ↗</a>
     <button class="btn-resume" id="resumeBtn" aria-label="Download resume">
@@ -884,7 +877,6 @@ function animConfetti() {
 }
 
 /* ── RESUME DOWNLOAD ── */
-/* ── RESUME DOWNLOAD ── */
 document.getElementById('resumeBtn').addEventListener('click', () => {
   const lines = [
     '<!DOCTYPE html><html><head><meta charset="UTF-8">',
@@ -909,20 +901,20 @@ document.getElementById('resumeBtn').addEventListener('click', () => {
     '<span>amarishavinodh2002@gmail.com</span>',
     '<span>linkedin.com/in/amarish-avinodh-4113702b3</span>',
     '</div>',
-    '<p>B.Sc. IT student seeking entry-level opportunities. Strong foundation in full-stack development, Android, and AI-integrated systems.</p>',
+    '<p>B.Sc. IT graduate pursuing a career in cybersecurity, currently studying for the CEH (Certified Ethical Hacker) certification. Seeking entry-level roles in cybersecurity, penetration testing, or SOC analysis.</p>',
     '<h2>Education</h2>',
-    '<div class="item"><h3>B.Sc. Information Technology</h3><div class="meta">Center for Computer Science &amp; IT &nbsp;·&nbsp; 2023 – 2026 (Expected)</div></div>',
+    '<div class="item"><h3>Certified Ethical Hacker (CEH) — In Progress</h3><div class="meta">EC-Council &nbsp;·&nbsp; 2026 – Present</div></div>',
+    '<div class="item"><h3>CICSA — In Progress</h3><div class="meta">Red Team Hacker Academy &nbsp;·&nbsp; 2026 – Present</div></div>',
+    '<div class="item"><h3>B.Sc. Information Technology</h3><div class="meta">Center for Computer Science &amp; IT &nbsp;·&nbsp; 2023 – 2026</div></div>',
     '<div class="item"><h3>Higher Secondary — Bio-Mathematics</h3><div class="meta">Nazareth Matric Higher Secondary School &nbsp;·&nbsp; 2020</div></div>',
     '<h2>Skills</h2>',
-    '<div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C++</span><span class="tag">Dart / Flutter</span><span class="tag">MySQL</span><span class="tag">Android Studio</span><span class="tag">Firebase</span><span class="tag">REST APIs</span><span class="tag">Git</span><span class="tag">Machine Learning</span><span class="tag">Figma</span></div>',
+    '<div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C++</span><span class="tag">Linux / Kali Linux</span><span class="tag">Nmap</span><span class="tag">Wireshark</span><span class="tag">Metasploit</span><span class="tag">Burp Suite</span><span class="tag">OWASP Top 10</span><span class="tag">Network Security</span><span class="tag">Vulnerability Assessment</span><span class="tag">Cryptography</span><span class="tag">Git</span></div>',
     '<h2>Projects</h2>',
-    '<div class="item"><h3>Arogyam 360 — Intelligent Health Ecosystem</h3><div class="meta">2024 · Python · Dart/Flutter · MySQL · AI/ML · Android</div><p>Hybrid web + Android fitness platform with AI diet guidance and real-time health monitoring.</p></div>',
-    '<div class="item"><h3>TaskFlow — Developer CLI</h3><div class="meta">Python · CLI · JSON</div><p>Command-line task manager with priority queues and deadline tracking.</p></div>',
-    '<div class="item"><h3>CodeSentinel — Issue Tracker</h3><div class="meta">Java · MySQL · OOP</div><p>Bug tracker with severity tagging, team assignment, and status workflows.</p></div>',
-    '<div class="item"><h3>DataBridge — CSV Analytics API</h3><div class="meta">Python · REST API · Data Analysis</div><p>RESTful API for CSV ingestion and statistical summaries.</p></div>',
+    '<p>Project portfolio in progress — updates coming soon as CEH and CICSA coursework is applied to hands-on work.</p>',
     '<h2>Certifications</h2>',
+    '<div class="item"><h3>Certified Ethical Hacker (CEH) — EC-Council</h3><div class="meta">In Progress</div></div>',
+    '<div class="item"><h3>CICSA — Red Team Hacker Academy</h3><div class="meta">In Progress</div></div>',
     '<div class="item"><h3>Introduction to Software Engineering — IBM / Coursera</h3><div class="meta">Completed 2024</div></div>',
-    '<div class="item"><h3>Python for Everybody — Google / Coursera</h3><div class="meta">Completed 2024</div></div>',
     '</body></html>'
   ];
   const html = lines.join('\n');
