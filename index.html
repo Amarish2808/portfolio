@@ -16,6 +16,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Ne
 img{display:block;max-width:100%}
 a{-webkit-tap-highlight-color:transparent}
 
+/* ─── BOOT SEQUENCE ─── */
+#bootScreen{position:fixed;inset:0;z-index:100000;background:#000;color:#d4d4d8;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:clamp(0.7rem,1.6vw,0.92rem);padding:clamp(1.5rem,4vw,3rem);display:flex;flex-direction:column;justify-content:flex-end;transition:opacity 0.5s ease,visibility 0.5s ease;cursor:pointer}
+#bootScreen.hide{opacity:0;visibility:hidden;pointer-events:none}
+.boot-lines{display:flex;flex-direction:column;gap:0.3rem;max-width:640px}
+.boot-line{opacity:0;animation:bootIn 0.2s forwards;line-height:1.6}
+@keyframes bootIn{to{opacity:1}}
+.boot-ok{color:#30d158;font-weight:600}
+.boot-dim{color:#6e6e73}
+.boot-skip{margin-top:1.2rem;font-size:0.6rem;letter-spacing:0.05em;color:rgba(255,255,255,0.25);opacity:0;animation:bootIn 0.3s 0.4s forwards}
+
+html.boot-lock,html.boot-lock body{overflow:hidden;height:100%}
+
 /* ─── READING PROGRESS ─── */
 #readProgress{position:fixed;top:0;left:0;z-index:9999;height:2px;width:0%;background:linear-gradient(90deg,#2997ff 0%,#6ec6ff 50%,#2997ff 100%);background-size:200% 100%;animation:progressShimmer 2s linear infinite;pointer-events:none}
 @keyframes progressShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
@@ -104,6 +116,8 @@ body.light-mode #konamiHint{color:rgba(29,29,31,0.14)}
 .hero-h1{font-size:clamp(3rem,11vw,9.5rem);font-weight:700;letter-spacing:-0.03em;line-height:0.96;color:#f5f5f7;opacity:0;animation:up 1s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;padding:0 1rem}
 .hero-h1 .gr{background:linear-gradient(90deg,#2997ff,#6ec6ff,#aadcff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-role{font-size:clamp(0.95rem,2.4vw,1.55rem);color:#6e6e73;font-weight:400;letter-spacing:-0.01em;margin-top:0.9rem;opacity:0;animation:up 1s cubic-bezier(0.16,1,0.3,1) 0.45s forwards;padding:0 1.5rem}
+.hero-quote{font-size:clamp(0.78rem,1.5vw,0.95rem);color:#2997ff;font-style:italic;font-weight:500;letter-spacing:-0.005em;margin-top:0.8rem;opacity:0;animation:up 1s cubic-bezier(0.16,1,0.3,1) 0.52s forwards;padding:0 1.5rem}
+body.light-mode .hero-quote{color:#0066cc}
 .hero-actions{display:flex;gap:clamp(1.2rem,4vw,2.5rem);margin-top:2rem;opacity:0;animation:up 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;flex-wrap:wrap;justify-content:center;padding:0 1rem}
 .ha{font-size:clamp(0.85rem,1.6vw,1rem);color:#2997ff;text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem;transition:opacity 0.2s;min-height:44px}
 .ha:hover{opacity:0.65}
@@ -300,6 +314,25 @@ body.light-mode .projects-wrap{background:#e8e8ed}
 body.light-mode .proj-empty{border-color:rgba(0,0,0,0.16)}
 body.light-mode .proj-empty-visual{background:rgba(0,0,0,0.02)}
 
+body.light-mode body.light-mode .term-bar{display:flex;align-items:center;gap:0.4rem;padding:0.7rem 1rem;background:#171717;border-bottom:1px solid rgba(255,255,255,0.06)}
+.term-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.term-dot.r{background:#ff5f57}.term-dot.y{background:#febc2e}.term-dot.g{background:#28c840}
+.term-title{margin-left:0.5rem;font-size:0.68rem;color:#8a8a8e;letter-spacing:0.02em}
+.scan-output{margin:0;padding:1.1rem 1.2rem 1rem;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:clamp(0.6rem,1.35vw,0.74rem);line-height:1.75;color:#9a9a9e;white-space:pre;overflow-x:auto;min-height:440px}
+.scan-ok{color:#30d158;font-weight:600}
+.scan-warn{color:#ffd60a;font-weight:600}
+.scan-hl{color:#2997ff}
+.scan-dim{color:#5c5c61}
+.scan-white{color:#f5f5f7}
+.scan-bad{color:#ff6961;font-weight:600}
+.scan-cursor{display:inline-block;width:0.55em;height:1.05em;background:#d4d4d8;vertical-align:text-bottom;animation:cursorBlink 1s steps(1) infinite}
+@keyframes cursorBlink{50%{opacity:0}}
+.scan-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:0.7rem 1.2rem;border-top:1px solid rgba(255,255,255,0.07);font-size:0.62rem;color:#6e6e73;letter-spacing:0.02em}
+.scan-rescan{background:transparent;border:1px solid rgba(255,255,255,0.14);color:#d4d4d8;font:inherit;font-size:0.62rem;padding:0.3rem 0.75rem;border-radius:100px;cursor:pointer;transition:border-color 0.2s,color 0.2s}
+.scan-rescan:hover{border-color:#2997ff;color:#2997ff}
+.scan-box{max-width:760px;margin:clamp(2rem,4vw,3rem) auto 0;border-radius:14px;overflow:hidden;background:#0a0a0a;border:1px solid rgba(255,255,255,0.1);box-shadow:0 24px 60px rgba(0,0,0,0.45)}
+body.light-mode .scan-box{background:#111;border-color:rgba(0,0,0,0.15)}
+
 /* ─── ABOUT ─── */
 .about-wrap{background:#1d1d1f;padding:clamp(5rem,10vw,8rem) clamp(1.2rem,4vw,2rem);display:flex;align-items:center;justify-content:center;transition:background 0.5s}
 body.light-mode .about-wrap{background:#fff}
@@ -342,6 +375,12 @@ body.light-mode .cert-name{color:#1d1d1f}
 .pw{background:rgba(255,214,10,0.1);color:#ffd60a;border:1px solid rgba(255,214,10,0.2)}
 @media(max-width:768px){.cert-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:400px){.cert-grid{grid-template-columns:1fr}}
+.cert-group-label{max-width:1100px;margin:0 auto 0.9rem;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#6e6e73}
+.certs-wrap .cert-group-label:not(:first-of-type){margin-top:2.5rem}
+.cert-grid-2{grid-template-columns:repeat(2,1fr)}
+.cert-grid-1{grid-template-columns:1fr}
+@media(max-width:768px){.cert-grid-2{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.cert-grid-2{grid-template-columns:1fr}}
 
 /* ─── EDUCATION ─── */
 .edu-wrap{background:#f5f5f7;padding:clamp(5rem,10vw,8rem) clamp(1.2rem,4vw,2rem);transition:background 0.5s}
@@ -402,6 +441,12 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 </head>
 <body>
 
+<!-- BOOT SEQUENCE -->
+<div id="bootScreen" aria-hidden="true">
+  <div class="boot-lines" id="bootLines"></div>
+  <div class="boot-skip">[ click or press any key to skip ]</div>
+</div>
+
 <!-- READING PROGRESS -->
 <div id="readProgress" role="progressbar" aria-label="Reading progress"></div>
 
@@ -410,6 +455,7 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 
 <!-- RIPPLE OVERLAY -->
 <div id="themeOverlay"></div>
+
 
 <!-- CONFETTI EASTER EGG -->
 <canvas id="easterCanvas" aria-hidden="true"></canvas>
@@ -438,6 +484,7 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
     <li><a href="#photo" class="nav-link">Profile</a></li>
     <li><a href="#skills" class="nav-link">Skills</a></li>
     <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#certifications" class="nav-link">Certs</a></li>
     <li><a href="#education" class="nav-link">Education</a></li>
     <li><a href="#contact" class="nav-link">Contact</a></li>
   </ul>
@@ -461,8 +508,9 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
     <div class="h3d-card"></div>
   </div>
   <p class="hero-kicker">B.Sc. Information Technology Graduate · Pursuing CEH &amp; CICSA · Thrissur, Kerala</p>
-  <h1 class="hero-h1">Amarish<br><span class="gr">A Vinodh</span></h1>
+  <h1 class="hero-h1"><span id="nameFirst">Amarish</span><br><span class="gr" id="nameSecond">A Vinodh</span></h1>
   <p class="hero-role">Cybersecurity Enthusiast. Ethical Hacker in training. Defender of systems.</p>
+  <p class="hero-quote">"You can't defend what you don't understand how to break."</p>
   <div class="hero-actions">
     <a href="#projects" class="ha">View Work <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="tel:+919498010421" class="ha">Get in Touch <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -473,9 +521,9 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stats-grid">
-    <div class="stat-cell ru"><span class="stat-n" data-to="5">0</span><div class="stat-l">Languages</div></div>
-    <div class="stat-cell ru"><span class="stat-n">Soon</span><div class="stat-l">Projects</div></div>
-    <div class="stat-cell ru"><span class="stat-n" data-to="3">0</span><div class="stat-l">Certifications</div></div>
+    <div class="stat-cell ru"><span class="stat-n" data-to="1">0</span><div class="stat-l">Certifications Earned</div></div>
+    <div class="stat-cell ru"><span class="stat-n" data-to="2">0</span><div class="stat-l">Certifications In Progress</div></div>
+    <div class="stat-cell ru"><span class="stat-n" data-to="7">0</span><div class="stat-l">Core Skills</div></div>
     <div class="stat-cell ru"><span class="stat-n" data-to="2026" data-year="1">0</span><div class="stat-l">Graduated</div></div>
   </div>
 </div>
@@ -645,6 +693,11 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
       <div class="tag-pill"><div class="td g"></div>Ethical Hacking (CEH)</div><div class="tag-pill"><div class="td g"></div>Penetration Testing</div><div class="tag-pill"><div class="td g"></div>Vulnerability Assessment</div><div class="tag-pill"><div class="td g"></div>Git &amp; GitHub</div><div class="tag-pill"><div class="td g"></div>C++ / Java</div><div class="tag-pill"><div class="td g"></div>SIEM Basics</div><div class="tag-pill"><div class="td g"></div>Cryptography</div><div class="tag-pill"><div class="td g"></div>Problem-Solving</div>
     </div>
   </div>
+  <div class="scan-box ru" id="scanBox">
+    <div class="term-bar"><span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span><span class="term-title">root@kali: ~ — nmap -sC -sV -O amarish.local</span></div>
+    <pre class="scan-output" id="scanOut" aria-label="Simulated nmap scan of Amarish's skill set"></pre>
+    <div class="scan-foot"><span class="scan-legend"><span class="scan-ok">●</span> open = hands-on &nbsp; <span class="scan-warn">●</span> filtered = currently learning</span><button type="button" class="scan-rescan" id="scanRescan">↻ rescan</button></div>
+  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -685,14 +738,18 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 </section>
 
 <!-- CERTIFICATIONS -->
-<section class="certs-wrap">
+<section class="certs-wrap" id="certifications">
   <div class="certs-top">
     <span class="eyebrow ru">Certifications</span>
     <h2 class="big-title ru">Always learning. Always growing.</h2>
   </div>
-  <div class="cert-grid">
+  <div class="cert-group-label ru">In Progress</div>
+  <div class="cert-grid cert-grid-2">
     <div class="cert-box ru"><span class="cert-icon">🎯</span><div class="cert-org">EC-Council</div><div class="cert-name">Certified Ethical Hacker (CEH)</div><span class="cert-pill pw">In Progress</span></div>
     <div class="cert-box ru"><span class="cert-icon">🕶️</span><div class="cert-org">Red Team Hacker Academy</div><div class="cert-name">CICSA</div><span class="cert-pill pw">In Progress</span></div>
+  </div>
+  <div class="cert-group-label ru">Earned</div>
+  <div class="cert-grid cert-grid-1">
     <div class="cert-box ru"><span class="cert-icon">🧑‍💻</span><div class="cert-org">IBM / Coursera</div><div class="cert-name">Introduction to Software Engineering</div><span class="cert-pill pd">Completed 2024</span></div>
   </div>
 </section>
@@ -734,6 +791,141 @@ body,nav,#hero,.stats-bar,.sticky-pin,.skills-wrap,.about-wrap,.certs-wrap,.edu-
 </footer>
 
 <script>
+/* ── BOOT SEQUENCE ── */
+(function(){
+  const screen = document.getElementById('bootScreen');
+  const linesEl = document.getElementById('bootLines');
+  if (!screen || !linesEl) { runDecrypt(); return; }
+  document.documentElement.classList.add('boot-lock');
+  const lines = [
+    ['[boot] initializing portfolio.sys...'],
+    ['[ <span class="boot-ok">ok</span> ] loading profile: amarish_a_vinodh'],
+    ['[ <span class="boot-ok">ok</span> ] mounting /skills ... done'],
+    ['[ <span class="boot-ok">ok</span> ] mounting /certifications ... CEH [IN_PROGRESS] CICSA [IN_PROGRESS]'],
+    ['[ <span class="boot-ok">ok</span> ] checking status ... OPEN_TO_WORK = true'],
+    ['[ <span class="boot-ok">ok</span> ] establishing secure connection...'],
+    ['<span class="boot-dim">access granted.</span>']
+  ];
+  let i = 0, finished = false;
+  function finishBoot(){
+    if (finished) return; finished = true;
+    screen.classList.add('hide');
+    document.documentElement.classList.remove('boot-lock');
+    setTimeout(runDecrypt, 150);
+  }
+  function nextLine(){
+    if (i >= lines.length) { setTimeout(finishBoot, 450); return; }
+    const d = document.createElement('div');
+    d.className = 'boot-line';
+    d.innerHTML = lines[i][0];
+    linesEl.appendChild(d);
+    i++;
+    setTimeout(nextLine, 220);
+  }
+  screen.addEventListener('click', finishBoot);
+  document.addEventListener('keydown', finishBoot, { once: true });
+  setTimeout(nextLine, 200);
+})();
+
+/* ── GLITCH / DECRYPT NAME EFFECT ── */
+function decryptText(el, finalText, startDelay){
+  if (!el) return;
+  const pool = '!<>-_\\/[]{}=+*^?#0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  setTimeout(() => {
+    let iteration = 0;
+    const timer = setInterval(() => {
+      el.textContent = finalText.split('').map((char, idx) => {
+        if (char === ' ') return ' ';
+        if (idx < iteration) return finalText[idx];
+        return pool[Math.floor(Math.random() * pool.length)];
+      }).join('');
+      if (iteration >= finalText.length) clearInterval(timer);
+      iteration += 1 / 3;
+    }, 30);
+  }, startDelay || 0);
+}
+function runDecrypt(){
+  decryptText(document.getElementById('nameFirst'), 'Amarish', 0);
+  decryptText(document.getElementById('nameSecond'), 'A Vinodh', 350);
+}
+
+/* ── NMAP SCAN ANIMATION ── */
+(function(){
+  const box = document.getElementById('scanBox'), out = document.getElementById('scanOut'), btn = document.getElementById('scanRescan');
+  if (!box || !out) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ok = t => '<span class="scan-ok">' + t + '</span>', warn = t => '<span class="scan-warn">' + t + '</span>',
+        hl = t => '<span class="scan-hl">' + t + '</span>', dim = t => '<span class="scan-dim">' + t + '</span>',
+        wh = t => '<span class="scan-white">' + t + '</span>', bad = t => '<span class="scan-bad">' + t + '</span>';
+  const row = (p, st, svc, ver) => p.padEnd(10) + (st === 'open' ? ok('open    ') : warn('filtered')) + ' ' + wh(svc.padEnd(18)) + ' ' + ver;
+  const cmd = 'nmap -sC -sV -O amarish.local';
+  const lines = [
+    'Starting Nmap 7.94 ( https://nmap.org ) at 2026-10-23 IST',
+    'NSE: Loaded 156 scripts for scanning.',
+    {progress: 'Service scan Timing:'},
+    'Nmap scan report for ' + wh('amarish.local') + ' (127.0.0.1)',
+    'Host is up (0.00021s latency). ' + dim('Not shown: 990 closed ports'),
+    '',
+    wh('PORT      STATE    SERVICE            VERSION'),
+    row('21/tcp', 'open', 'python', '3.12 — scripting & automation'),
+    row('22/tcp', 'open', 'linux', 'Kali rolling — daily driver'),
+    row('80/tcp', 'open', 'owasp-top-10', 'web app vulnerability basics'),
+    row('3128/tcp', 'open', 'burp-suite', 'proxy / intercept / repeater'),
+    row('5000/tcp', 'open', 'wireshark', 'packet analysis'),
+    row('8080/tcp', 'open', 'metasploit', 'exploit framework'),
+    row('8443/tcp', 'open', 'cryptography', 'AES / RSA fundamentals'),
+    row('9000/tcp', 'open', 'git', 'version control'),
+    row('443/tcp', 'filtered', 'ceh', 'EC-Council · in progress'),
+    row('1337/tcp', 'filtered', 'cicsa', 'Red Team Hacker Academy · in progress'),
+    '',
+    'Host script results:',
+    hl('| hire-me.nse:'),
+    '|   role:       ' + wh('Aspiring Penetration Tester / SOC Analyst'),
+    '|   education:  B.Sc. Information Technology (graduated 2026)',
+    '|   location:   Thrissur, Kerala (IST, UTC+5:30)',
+    '|   status:     ' + ok('OPEN_TO_WORK'),
+    '|   ' + bad('VULNERABLE:'),
+    '|     Unstoppable curiosity  ' + dim('(CVE-2026-0001, severity: HIGH)'),
+    '|     Learns faster than patch cycles',
+    '|_  contact:    ' + hl('amarishavinodh2002@gmail.com'),
+    'OS details: Human 1.x (Ethical Hacker build, still updating)',
+    '',
+    'Nmap done: 1 IP address (1 host up) scanned in 0.38 seconds'
+  ];
+  let token = 0, started = false;
+  const sleep = ms => new Promise(r => setTimeout(r, reduce ? 0 : ms));
+  const addLine = html => { const d = document.createElement('div'); d.innerHTML = html || '&nbsp;'; out.appendChild(d); return d; };
+  async function run(){
+    const my = ++token; out.innerHTML = '';
+    const p = addLine('<span class="scan-ok">root@kali</span>:' + hl('~') + '# <span id="scanCmd"></span><span class="scan-cursor"></span>');
+    const cmdEl = p.querySelector('#scanCmd');
+    for (const ch of cmd) { if (my !== token) return; cmdEl.textContent += ch; await sleep(38); }
+    await sleep(350); if (my !== token) return;
+    p.querySelector('.scan-cursor').remove();
+    for (const ln of lines) {
+      if (my !== token) return;
+      if (typeof ln === 'object') {
+        const d = addLine('');
+        for (let i = 0; i <= 20; i++) {
+          if (my !== token) return;
+          const pct = Math.round(i / 20 * 100);
+          d.innerHTML = ln.progress + ' [' + ok('█'.repeat(i)) + dim('░'.repeat(20 - i)) + '] ' + pct + '%';
+          await sleep(45);
+        }
+        continue;
+      }
+      addLine(ln);
+      const heavy = ln.indexOf('PORT') > -1 || ln === '';
+      await sleep(ln.indexOf('/tcp') > -1 ? 130 : heavy ? 120 : 90);
+    }
+    if (my !== token) return;
+    addLine('<br><span class="scan-ok">root@kali</span>:' + hl('~') + '# <span class="scan-cursor"></span>');
+  }
+  const io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting && !started) { started = true; run(); io.disconnect(); } }); }, { threshold: 0.35 });
+  io.observe(box);
+  if (btn) btn.addEventListener('click', () => { started = true; run(); });
+})();
+
 /* ── NAV LIGHT STATE (for light background sections) ── */
 const nav = document.getElementById('nav');
 const lightSections = ['.projects-wrap','.edu-wrap'].map(s => document.querySelector(s));
